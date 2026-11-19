@@ -105,7 +105,7 @@ export async function signin(formData: FormData): Promise<AuthResult> {
     return { success: false, message: "Invalid email or password." };
   }
 
-  redirect("/");
+  redirect("/dashboard");
 }
 
 export async function signout(): Promise<AuthResult> {
@@ -118,6 +118,10 @@ export async function signout(): Promise<AuthResult> {
   }
 
   redirect("/auth/login");
+}
+
+export async function signoutFormAction(): Promise<void> {
+  await signout();
 }
 
 export async function getSession() {
