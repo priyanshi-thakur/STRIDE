@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-stride-ivory: #F7F4EC;
+  --color-stride-olive: #414831;
+  --color-stride-olive-contrast: #ffffff;
+  --color-stride-sage: #A9B49A;
+  --color-stride-stone: #D8D0BE;
+  --color-stride-dark: #343728;
+
+  --color-stride-mint: #D3E7E2;
+  --color-stride-blush: #F8D8E8;
+  --color-stride-butter: #F9E3A5;
+  --color-stride-lavender: #DCCFED;
+
+  --font-serif: "DM Serif Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  --background: #F7F4EC;
+  --foreground: #343728;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F7F4EC;
+    --foreground: #343728;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes stride-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  .stride-float {
+    animation: stride-float 7s ease-in-out infinite;
+  }
+}
